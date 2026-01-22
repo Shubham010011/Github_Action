@@ -21,3 +21,12 @@ jobs:
 
       - name: Run JUnit Tests
         run: mvn test
+       
+      - name: Build JAR
+        run: mvn package
+
+      - name: Create deploy directory
+        run: mkdir deploy
+
+      - name: Deploy JAR (Copy)
+        run: copy target\*.jar deploy\
